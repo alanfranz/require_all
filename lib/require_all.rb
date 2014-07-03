@@ -80,6 +80,8 @@ module RequireAll
         raise LoadError, "no such file to load -- #{arg}" if files.empty?
       end
     end
+    
+    return true if files.empty?
 
     if options[:method] == :autoload
       files.map! { |file| [file, File.expand_path(file)] }
