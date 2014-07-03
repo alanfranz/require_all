@@ -81,9 +81,6 @@ module RequireAll
       end
     end
 
-    # If there's nothing to load, you're doing it wrong!
-    raise LoadError, "no files to load" if files.empty?
-
     if options[:method] == :autoload
       files.map! { |file| [file, File.expand_path(file)] }
       files.each do |file, full_path|
